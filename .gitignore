@@ -1,13 +1,13 @@
 # Ignore virtual environment
 venv/
-
-# Ignore Python bytecode files
+.env
+__pycache__/
 *.pyc
+*.pyo
+.DS_Store
+*.sqlite3
+*.log
 
-# Ignore IDE/project-specific files
+# Ignore IDE and OS-specific files
 .vscode/
 .idea/
-
-# Ignore system files (e.g., macOS, Windows)
-.DS_Store
-Thumbs.db
