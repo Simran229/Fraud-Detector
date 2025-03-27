@@ -1,1 +1,13 @@
-venv\
+# Ignore virtual environment
+venv/
+
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore IDE/project-specific files
+.vscode/
+.idea/
+
+# Ignore system files (e.g., macOS, Windows)
+.DS_Store
+Thumbs.db
