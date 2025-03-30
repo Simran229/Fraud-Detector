@@ -79,3 +79,18 @@ def fraud_alerts():
     fraud_list = [{'amount': t.amount, 'category': t.category,
                      'description': t.description, 'date': t.date} for t in flagged_transactions]
     return jsonify({'fraud_alerts': fraud_list}), 200
+
+@main_bp.route('/debug/delete-user/<username>', methods=['DELETE'])
+def delete_user(username):
+    user = User.query.filter_by(username=username).first()
+    if user:
+        db.session.delete(user)
+        db.session.commit()
+        return jsonify({'message': f'User {username} deleted successfully'}), 200
+    return jsonify({'message': f'User {username} not found'}), 404
+
+@main_bp.route('/debug/users', methods=['GET'])
+def list_users():
+    users = User.query.all()
+    users_list = [{'id': u.id, 'username': u.username} for u in users]
+    return jsonify({'users': users_list}), 200

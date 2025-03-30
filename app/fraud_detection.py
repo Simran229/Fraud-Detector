@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from .models import Transaction, db
 
+# rule based approach
 def detect_fraud(transaction):
     # return true if fraud is detected, false otherwise
 

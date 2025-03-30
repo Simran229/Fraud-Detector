@@ -7,3 +7,4 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False  # Disable track modifications warning
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "fallback_jwt_secret_key")
     # JWT_SECRET_KEY = 'jwt_secret_key'  # For JWT token encryption (if using JWT)
+    JWT_VERIFY_SUB = False  # Allow 'sub' claim not to be present in JWT
