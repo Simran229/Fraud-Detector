@@ -15,3 +15,11 @@ class Transaction(db.Model):
     date = db.Column(db.DateTime, default=db.func.current_timestamp())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     is_fraud = db.Column(db.Boolean, default=False)
+
+class FraudAlert(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    transaction_id = db.Column(db.Integer, db.ForeignKey('transaction.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    fraud_score = db.Column(db.Float, nullable=False)  # Stores ML fraud probability
+    reason = db.Column(db.String(255), nullable=True)
+    timestamp = db.Column(db.DateTime, default=db.func.current_timestamp())
