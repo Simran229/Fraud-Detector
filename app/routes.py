@@ -73,35 +73,10 @@ def add_transaction():
         db.session.add(fraud_alert)
         db.session.commit()
         return jsonify({'message': 'Transaction flagged as fraudulent', 'fraud_score': fraud_score}), 400
-
-    # if prediction == 1:
-        # return jsonify({'message': 'Transaction flagged as fraudulent'}), 400
     
-    # new_transaction = Transaction(amount=amount, category=category,
-    #                             description=data.get('description', ''), user_id=user_id)
-    # db.session.add(new_transaction)
-    # db.session.commit()
 
     return jsonify({'message': 'Transaction added successfully', 'fraud_score': fraud_score}), 201
-    # data = request.get_json()
-    # user_id = get_jwt_identity() #extract user id from JWT token
-
-    # if not data.get('amount') or not data.get('category'):
-    #     return jsonify({'message': 'Amount and category are required'}), 400
     
-    # new_transaction = Transaction(amount=data['amount'], category=data['category'],
-    #                               description=data.get('description', ''), user_id=user_id)
-    # # Check for fraud
-    # if detect_fraud(new_transaction):
-    #     new_transaction.is_fraud = True
-    #     db.session.add(new_transaction)
-    #     db.session.commit()
-    #     return jsonify({'message': 'Transaction added but detected as fraudulent'}), 400
-    
-    # db.session.add(new_transaction)
-    # db.session.commit()
-
-    # return jsonify({'message': 'Transaction added successfully'}), 201
 
 # Get transactions
 @main_bp.route('/transactions', methods=['GET'])
