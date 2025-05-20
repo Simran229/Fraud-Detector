@@ -97,3 +97,13 @@ The current model achieves:
 
 ## Acknowledgments
 - Credit Card Fraud Dataset from Kaggle
+
+## Dataset Setup
+
+This project uses the "Credit Card Fraud Detection" dataset from Kaggle. To set up the dataset:
+
+1. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
+2. Create a `data` directory in the project root if it doesn't exist
+3. Place the downloaded `creditcard.csv` file in the `data` directory
+
+The dataset is not included in this repository due to its size (143.84 MB). This is intentional as it's a best practice to not include large datasets in version control.
